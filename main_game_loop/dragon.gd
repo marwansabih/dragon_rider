@@ -1,7 +1,7 @@
 class_name Dragon
 extends Sprite2D
 
-var health = 1000
+var health = 1200
 var org_modulate: Color
 var up_dash_active = false
 var down_dash_active = false

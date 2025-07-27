@@ -36,6 +36,7 @@ func _input(event: InputEvent) -> void:
 	if not GlobalVariables.game_started:
 		return
 	
+	
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			if fireball.scale.x < 1.5:

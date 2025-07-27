@@ -90,7 +90,7 @@ func take_hit(area: Area2D):
 		delta_phi *= 3
 		stone_generation_time /= 2
 		stage += 1
-	if health <= max_health * 1/3 and stage == 2:
+	if health <= max_health * 1/4 and stage == 2:
 		stage = 3
 		generate_stone_circle(
 			second_stone_circle,
