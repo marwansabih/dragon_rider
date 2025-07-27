@@ -30,8 +30,6 @@ func set_next_x_goal():
 	$StartXFlight.stop()
 
 func take_hit(area: Area2D):
-	if not $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.play()
 	if not area.is_in_group("projectile"):
 		return
 	var spear = area.get_parent()
@@ -40,6 +38,8 @@ func take_hit(area: Area2D):
 
 	if spear.shooter != "dragon":
 		return
+	if not $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
 	modulate = Color.RED
 	await get_tree().create_timer(0.2).timeout
 	modulate = org_modulate

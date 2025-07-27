@@ -15,13 +15,13 @@ func _ready() -> void:
 	$HealthBar.value = health
 
 func take_hit(area_entered):
-	if not $AudioStreamPlayer2D.playing:
-		$AudioStreamPlayer2D.play()
 	var spear = area_entered.get_parent()
 	if not spear and not is_instance_valid(spear):
 		return
 	if spear.shooter == "dragon":
 		return
+	if not $AudioStreamPlayer2D.playing:
+		$AudioStreamPlayer2D.play()
 	modulate = Color.RED
 	await get_tree().create_timer(0.2).timeout
 	modulate = org_modulate

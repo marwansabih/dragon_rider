@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://7ksbrht3qlw8" path="res://Projectiles/stone.tscn" id="3_6sw7h"]
 
 [node name="Sprite2D" type="Sprite2D"]
-position = Vector2(819, 328)
 texture = ExtResource("1_pq60k")
 script = ExtResource("2_6sw7h")
 stone_class = ExtResource("3_6sw7h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(32, -93, 54, -116, 87, -123, 131, -91, 159, -35, 84, -3, 114, 28, 113, 90, 60, 116, -17, 114, -61, 74, -114, 45, -138, -10, -147, -80, -58, -130, -42, -97)

@@ -13,10 +13,10 @@ var fireball : Fireball
 
 
 func _ready() -> void:
+	self.dragon = $Dragon
 	var enemy_screen: EnemyScreen = enemy_screen_class.instantiate()
 	add_child(enemy_screen)
 	enemy_screen.setup(self)
-	dragon = $Dragon
 	update_time_left()
 	$SpearTimer.start()
 	#$SpearTimer.timeout.connect(fire_spear)

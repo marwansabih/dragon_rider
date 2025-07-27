@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb6cs1flpc6np"]
+[gd_scene load_steps=9 format=3 uid="uid://cb6cs1flpc6np"]
 
 [ext_resource type="Script" uid="uid://brqani7vcr6ha" path="res://enemies/enemy_screen.gd" id="1_mfcrk"]
 [ext_resource type="PackedScene" uid="uid://1kryypyi2eii" path="res://enemies/flying_vulputure.tscn" id="2_menia"]
 [ext_resource type="PackedScene" uid="uid://yau1r41donsw" path="res://enemies/flying_dragon.tscn" id="3_0cb6c"]
 [ext_resource type="PackedScene" uid="uid://r8cgma6s024x" path="res://Projectiles/spear.tscn" id="3_j8kao"]
+[ext_resource type="PackedScene" uid="uid://ckls68aqb2xoj" path="res://enemies/gargoyle.tscn" id="4_wc4l7"]
 [ext_resource type="AudioStream" uid="uid://eypv3satute7" path="res://music/Bow Blocked 3.ogg" id="5_adkbi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adkbi"]
@@ -25,6 +26,7 @@ border_color = Color(0, 0, 0, 1)
 script = ExtResource("1_mfcrk")
 flying_vulpture_class = ExtResource("2_menia")
 flying_dragon_class = ExtResource("3_0cb6c")
+gargoyle_class = ExtResource("4_wc4l7")
 spear_class = ExtResource("3_j8kao")
 
 [node name="Timer" type="Timer" parent="."]

@@ -3,13 +3,15 @@ extends Node2D
 
 @export var flying_vulpture_class : PackedScene
 @export var flying_dragon_class: PackedScene
+@export var gargoyle_class: PackedScene
 @export var spear_class: PackedScene
 
 var game_screen: GameScreen
 
 func setup(game_screen: GameScreen):
 	self.game_screen = game_screen
-	create_enemy("vulpture")
+	#create_enemy("vulpture")
+	create_enemy("gargoyle")
 	"""
 	$Timer.timeout.connect(
 		create_enemy.bind("vulpture")
@@ -40,6 +42,17 @@ func create_enemy(
 		)
 		#$Timer.wait_time = randf_range(15,20)
 		#$Timer.start()
+	if name == "gargoyle":
+		var gargoyle: Gargoyle = gargoyle_class.instantiate()
+		game_screen.add_child(gargoyle)
+		gargoyle.setup(game_screen)
+		$Healthbar.max_value = gargoyle.health
+		$Healthbar.value = gargoyle.health
+		gargoyle.took_hit.connect(
+			update_enemy_bar
+		)
+		
+		
 	if name == "flying_dragon":
 		var flying_dragon: FlyingDragon = flying_dragon_class.instantiate()
 		var x = 1151 - 75
@@ -109,7 +122,6 @@ func get_direction(vulpture) -> Vector2:
 	var dy = -target_pos.y + start_pos.y  # correct direction (taking into account that dy starts from top)
 	var vx = -1000.0  # leftward horizontal speed
 	var t = abs(dx / vx)  # time to reach target at this vx
-	print(t)
 
 	var vy = (dy + 0.5 * g * t * t) / t  # vertical speed with gravity
 	

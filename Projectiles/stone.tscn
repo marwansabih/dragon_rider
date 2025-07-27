@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://7ksbrht3qlw8"]
+[gd_scene load_steps=4 format=3 uid="uid://7ksbrht3qlw8"]
 
 [ext_resource type="Texture2D" uid="uid://d0gjwb4kdogin" path="res://images/stone.png" id="1_as7bu"]
+[ext_resource type="Script" uid="uid://bdc1j4ylj8fr3" path="res://Projectiles/stone.gd" id="2_2v20m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2v20m"]
+radius = 16.0312
 
 [node name="Stone" type="Sprite2D"]
 texture = ExtResource("1_as7bu")
+script = ExtResource("2_2v20m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_2v20m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, -2.86102e-07)
+scale = Vector2(1.25, 1.3)

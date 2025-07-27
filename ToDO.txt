@@ -1,9 +1,18 @@
 # Next steps
 
+- idea for other games:
+	- ocean trader
+	- boss creater
+
 - Fight against Bosses
 	- vulpture
 		- add tripple shoot
 		- next phase after tripple shoot
+	- gargole
+		- first phase slow stone circle
+		- second phase fast stone circle
+		- third phase two stone circles
+	- shiapoaf like boss (how splits in lot of tiny ones at the end)
 
 - Counter before battle
 	- add sound effect
