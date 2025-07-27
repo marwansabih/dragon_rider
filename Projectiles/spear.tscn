@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://r8cgma6s024x"]
+
+[ext_resource type="Script" uid="uid://crsmjug15we1a" path="res://Projectiles/spear.gd" id="1_bh3mn"]
+[ext_resource type="Texture2D" uid="uid://ddv7fv2pwvt72" path="res://images/spear.png" id="1_lbgtj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3mn"]
+size = Vector2(49, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r43yr"]
+size = Vector2(49, 11)
+
+[node name="Spear" type="RigidBody2D"]
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_bh3mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lbgtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_bh3mn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_r43yr")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

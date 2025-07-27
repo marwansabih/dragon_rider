@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://1kryypyi2eii"]
+
+[ext_resource type="Texture2D" uid="uid://dg8lij7nbnmhs" path="res://images/flying_vulpure.png" id="1_x47q5"]
+[ext_resource type="Script" uid="uid://tvclclnvw4lp" path="res://enemies/flying_vulputure.gd" id="2_20rh3"]
+[ext_resource type="AudioStream" uid="uid://30rrhb6lni60" path="res://music/Monster_Hump_v1_wav.wav" id="3_ctagv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x47q5"]
+size = Vector2(100, 88)
+
+[node name="FlyingVulputure" type="Sprite2D"]
+texture = ExtResource("1_x47q5")
+script = ExtResource("2_20rh3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 6)
+shape = SubResource("RectangleShape2D_x47q5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="StartXFlight" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ctagv")
+pitch_scale = 0.54

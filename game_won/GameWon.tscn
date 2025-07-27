@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://n26cw5qrarns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wntls"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GameWon" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1147.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wntls")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 134.0
+offset_right = 1152.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0.239864, 0.522459, 0.949496, 1)
+theme_override_font_sizes/font_size = 40
+text = "GAME WON"
+horizontal_alignment = 1

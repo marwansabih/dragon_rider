@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=3 uid="uid://c7arftaoh38gt"]
+
+[ext_resource type="Script" uid="uid://cu330iyd6suwy" path="res://main_game_loop/game_screen.gd" id="1_7xg7v"]
+[ext_resource type="PackedScene" uid="uid://cb6cs1flpc6np" path="res://enemies/enemy_screen.tscn" id="2_3vxms"]
+[ext_resource type="PackedScene" uid="uid://r8cgma6s024x" path="res://Projectiles/spear.tscn" id="3_hvhvy"]
+[ext_resource type="PackedScene" uid="uid://dbat67qihqus5" path="res://Projectiles/fireball.tscn" id="4_3vxms"]
+[ext_resource type="PackedScene" uid="uid://qlhrcpdt7lfo" path="res://background/BackGround.tscn" id="4_u4p58"]
+[ext_resource type="Texture2D" uid="uid://cwg52u8jvyuh0" path="res://images/flying_blue_dragon.png" id="5_ixni6"]
+[ext_resource type="Script" uid="uid://dxd6iicox6wco" path="res://main_game_loop/dragon.gd" id="6_kdhxs"]
+[ext_resource type="AudioStream" uid="uid://c7xjoptx6s24l" path="res://music/8-BIT Fantasy - Blood Moon.ogg" id="8_hvhvy"]
+[ext_resource type="AudioStream" uid="uid://b2lccaf5xmes3" path="res://music/Monster_Ouch_v3_wav.wav" id="8_u4p58"]
+[ext_resource type="AudioStream" uid="uid://34p5mxwjupgm" path="res://music/Fireball 1.wav" id="10_ixni6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yla3h"]
+size = Vector2(118, 95.9375)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixni6"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4p58"]
+bg_color = Color(0.505047, 0.033493, 0.038431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="GameScreen" type="Node2D"]
+script = ExtResource("1_7xg7v")
+enemy_screen_class = ExtResource("2_3vxms")
+spear_class = ExtResource("3_hvhvy")
+fireball_class = ExtResource("4_3vxms")
+
+[node name="BackGround" parent="." instance=ExtResource("4_u4p58")]
+
+[node name="Dragon" type="Sprite2D" parent="."]
+position = Vector2(288, 324)
+texture = ExtResource("5_ixni6")
+script = ExtResource("6_kdhxs")
+
+[node name="Area2D" type="Area2D" parent="Dragon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dragon/Area2D"]
+position = Vector2(-4, -1.09375)
+shape = SubResource("RectangleShape2D_yla3h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Dragon"]
+stream = ExtResource("8_u4p58")
+
+[node name="HealthBar" type="ProgressBar" parent="Dragon"]
+top_level = true
+custom_minimum_size = Vector2(576, 0)
+offset_left = 1.0
+offset_top = 621.0
+offset_right = 577.0
+offset_bottom = 648.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ixni6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u4p58")
+value = 100.0
+
+[node name="SpearTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="GlobalTimer" type="Timer" parent="."]
+
+[node name="TimeLeft" type="Label" parent="."]
+offset_top = 23.0
+offset_right = 1152.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 40
+text = "Time to start: 3"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hvhvy")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ixni6")
+pitch_scale = 0.47

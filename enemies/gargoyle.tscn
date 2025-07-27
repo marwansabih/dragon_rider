@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckls68aqb2xoj"]
+
+[ext_resource type="Texture2D" uid="uid://cbof6ey04873o" path="res://images/gargoyle.png" id="1_pq60k"]
+[ext_resource type="Script" uid="uid://jndmuudtjojq" path="res://enemies/gargoyle.gd" id="2_6sw7h"]
+[ext_resource type="PackedScene" uid="uid://7ksbrht3qlw8" path="res://Projectiles/stone.tscn" id="3_6sw7h"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(819, 328)
+texture = ExtResource("1_pq60k")
+script = ExtResource("2_6sw7h")
+stone_class = ExtResource("3_6sw7h")

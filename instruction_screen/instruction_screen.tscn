@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://chvbcfxtmblg8"]
+
+[ext_resource type="Script" uid="uid://2lnmibhjq4ms" path="res://instruction_screen/instruction_screen.gd" id="1_nvgiq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fne4f"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="InstructionScreen" type="Node2D"]
+script = ExtResource("1_nvgiq")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fne4f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 270.0
+offset_top = 94.0
+offset_right = 802.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 40
+text = "Move Up: W
+Move Down: S
+Fireballs follow your mouse
+
+
+
+music-track from
+8-bit-fantasy-music-horror
+by elvgames here on Itch.io"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 427.0
+offset_top = 322.0
+offset_right = 644.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 50
+text = "Start"

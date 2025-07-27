@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7e4q55kck3j4"]
+
+[ext_resource type="Script" uid="uid://bvml6lxwnnww2" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c7arftaoh38gt" path="res://main_game_loop/game_screen.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b2seq4gr4kq0k" path="res://game_over/GameOverScreen.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://n26cw5qrarns" path="res://game_won/GameWon.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://chvbcfxtmblg8" path="res://instruction_screen/instruction_screen.tscn" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://d4fb65cj5y80u" path="res://music/Monster_Tiny_v1_wav.wav" id="6_7mycd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+game_screen_class = ExtResource("2_0xm2m")
+game_over_screen_class = ExtResource("3_h2yge")
+game_won_screen_class = ExtResource("4_1bvp3")
+start_screen_class = ExtResource("5_lquwl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7mycd")
+pitch_scale = 0.58

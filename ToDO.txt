@@ -1,0 +1,9 @@
+# Next steps
+
+- Fight against Bosses
+	- vulpture
+		- add tripple shoot
+		- next phase after tripple shoot
+
+- Counter before battle
+	- add sound effect

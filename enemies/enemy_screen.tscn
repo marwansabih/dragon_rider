@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb6cs1flpc6np"]
+
+[ext_resource type="Script" uid="uid://brqani7vcr6ha" path="res://enemies/enemy_screen.gd" id="1_mfcrk"]
+[ext_resource type="PackedScene" uid="uid://1kryypyi2eii" path="res://enemies/flying_vulputure.tscn" id="2_menia"]
+[ext_resource type="PackedScene" uid="uid://yau1r41donsw" path="res://enemies/flying_dragon.tscn" id="3_0cb6c"]
+[ext_resource type="PackedScene" uid="uid://r8cgma6s024x" path="res://Projectiles/spear.tscn" id="3_j8kao"]
+[ext_resource type="AudioStream" uid="uid://eypv3satute7" path="res://music/Bow Blocked 3.ogg" id="5_adkbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adkbi"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wc4l7"]
+bg_color = Color(0.16016, 0.149033, 0.500294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="EnemyScreen" type="Node2D"]
+script = ExtResource("1_mfcrk")
+flying_vulpture_class = ExtResource("2_menia")
+flying_dragon_class = ExtResource("3_0cb6c")
+spear_class = ExtResource("3_j8kao")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerFlyingDragon" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_adkbi")
+
+[node name="Healthbar" type="ProgressBar" parent="."]
+top_level = true
+custom_minimum_size = Vector2(576, 27)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_adkbi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wc4l7")
+value = 100.0

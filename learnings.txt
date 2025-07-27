@@ -1,0 +1,6 @@
+# What did i learn about?
+
+1. Tweens:
+	In between animation ... you just define start and end state
+2. Grouping:
+	You have an add_to_group function and an is_in_group function usefull for 

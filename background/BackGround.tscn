@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qlhrcpdt7lfo"]
+
+[ext_resource type="Script" uid="uid://bq0sid1f641sh" path="res://background/back_ground.gd" id="1_t1o44"]
+[ext_resource type="PackedScene" uid="uid://5vso3t7fs554" path="res://background/Cloud.tscn" id="2_qpbqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1o44"]
+bg_color = Color(0.388975, 0.616308, 0.862886, 1)
+
+[node name="BackGround" type="Node2D"]
+script = ExtResource("1_t1o44")
+cloud_class = ExtResource("2_qpbqh")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t1o44")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
