@@ -29,6 +29,8 @@ var stage = 1
 
 var org_modulate: Color
 
+@export var boss_dialog_class: PackedScene
+
 signal took_hit(damage)
 
 
@@ -41,6 +43,13 @@ func _ready() -> void:
 		first_stone_circle,
 		180
 	)
+	add_dialog("Prepare to be stoned!")
+
+func add_dialog(text):
+	var first_boss_dialog = boss_dialog_class.instantiate()
+	add_child(first_boss_dialog)
+	first_boss_dialog.set_text(text)
+	first_boss_dialog.position = Vector2(0.75 * 1152.0 - 100, 124)
 
 func generate_stone_circle(
 	stone_circle: StoneCircle,
@@ -90,6 +99,7 @@ func take_hit(area: Area2D):
 		delta_phi *= 3
 		stone_generation_time /= 2
 		stage += 1
+		add_dialog("Okay lets speed things up!")
 	if health <= max_health * 1/4 and stage == 2:
 		stage = 3
 		generate_stone_circle(
@@ -97,6 +107,7 @@ func take_hit(area: Area2D):
 			250,
 			-1
 		)
+		add_dialog("AAARRGGHHH!")
 	if health <= 0:
 		queue_free()
 		GlobalVariables.game_won.emit()

@@ -16,3 +16,7 @@
 
 - Counter before battle
 	- add sound effect
+
+
+... Text for horror game
+... you little fools as will gather all your skulls
